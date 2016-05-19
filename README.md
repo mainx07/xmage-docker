@@ -7,4 +7,5 @@ Parts of the code is based on docker-xmage-apline, see: https://github.com/goest
     docker build -t jniesz/xmage .
 
 ## Run the docker start script
-    ./start_xmage.sh
+The bind interface is the interface name of the interface inside the container that you want the xmage server to bind to.
+    ./start_xmage.sh [bind interface]
