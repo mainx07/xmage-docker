@@ -43,7 +43,7 @@ USER xmage
 
 
 # XMage Defaults and env
-ENV XMAGE_DOCKER_SERVER_IP="xmage.nodalgrid.net" \
+ENV XMAGE_DOCKER_SERVER_IP="localhost" \
   XMAGE_DOCKER_SERVER_NAME="mage-server" \
   XMAGE_DOCKER_PORT="17171" \
   XMAGE_DOCKER_SECONDARY_BIND_PORT="17179" \
