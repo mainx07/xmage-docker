@@ -4,6 +4,10 @@ FROM ubuntu:14.04
 #set metadata
 MAINTAINER jniesz
 
+# DEBUG ONLY - Add root sudo access
+#RUN echo "xmage ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/xmage && \
+#    chmod 0440 /etc/sudoers.d/xmage
+
 #Install base packages needed
 RUN apt-get update && apt-get install -y software-properties-common
 
@@ -37,8 +41,9 @@ RUN useradd -c 'xmage server user' -m -d /home/xmage -s /bin/bash xmage && \
   chown -R xmage:xmage /opt/xmage
 USER xmage
 
+
 # XMage Defaults and env
-ENV XMAGE_DOCKER_SERVER_INTERFACE="eth0" \
+ENV XMAGE_DOCKER_SERVER_IP="xmage.nodalgrid.net" \
   XMAGE_DOCKER_SERVER_NAME="mage-server" \
   XMAGE_DOCKER_PORT="17171" \
   XMAGE_DOCKER_SECONDARY_BIND_PORT="17179" \
