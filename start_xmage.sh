@@ -3,8 +3,8 @@
 #set hostname of container
 XMAGE_DOCKER_SERVER_IP=${1:-localhost}
 
-CONTAINER_ID=`docker ps -afq "name=xmage"`
-IS_RUNNING=`docker ps -q -f name=xmage`
+CONTAINER_ID=`docker ps -aqf "name=xmage"`
+IS_RUNNING=`docker ps -q -f "name=xmage"`
 
 if [ ! -z $CONTAINER_ID ] && [ -z $IS_RUNNING ]; then
     sudo docker rm $CONTAINER_ID
