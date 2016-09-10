@@ -41,7 +41,6 @@ RUN useradd -c 'xmage server user' -m -d /home/xmage -s /bin/bash xmage && \
   chown -R xmage:xmage /opt/xmage
 USER xmage
 
-
 # XMage Defaults and env
 ENV XMAGE_DOCKER_SERVER_IP="localhost" \
   XMAGE_DOCKER_SERVER_NAME="mage-server" \
